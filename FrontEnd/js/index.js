@@ -1,8 +1,10 @@
 
-async function asyncReturn() { 
+genererWorks(); 
+
+async function genererWorks() { 
 
     const reponse = await fetch("http://localhost:5678/api/works/"); 
-    const works = await reponse.json(console.table);
+    const works = await reponse.json();
 
 
         for (let i = 0; i < works.length; i++) {
@@ -25,7 +27,17 @@ async function asyncReturn() {
         worksElement.appendChild(nomElement);
 
         }
-      
+    
+    const boutonObjet = document.querySelector("button");
+    boutonObjet.addEventListener("click", function () {
+        const worksFiltrees = works.filter(function (works){
+            return works.categoryId = 1;
+        });
+        document.querySelector(".gallery").innerHTML = "";
+        genererWorks(worksFiltrees);
+    });
+
+}
 
     const navBouton = document.querySelector(".boutons");
     const boutonTous = document.createElement("button");
@@ -41,15 +53,3 @@ async function asyncReturn() {
     navBouton.appendChild(boutonObjets);
     navBouton.appendChild(boutonAppartements);
     navBouton.appendChild(boutonHotel);
-
-    const boutonObjet = document.querySelector("button");
-    boutonObjet.addEventListener("click", function () {
-        const worksFiltrees = works.filter(function (works){
-            return works.id = "1"
-        });
-        document.querySelector(".gallery").innerHTML = "";
-        asyncReturn(worksFiltrees);
-    });
-}   
-asyncReturn(); 
-
