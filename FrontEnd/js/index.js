@@ -5,9 +5,6 @@ async function asyncReturn() {
     const works = await reponse.json(console.table);
 
 
-
-
-    
         for (let i = 0; i < works.length; i++) {
 
         const figure = works[i];
@@ -31,16 +28,24 @@ async function asyncReturn() {
     }   
     asyncReturn();   
 
-    const boutonFiltre = document.createElement("button")
-    const navBouton = document.querySelector(".filtre");
-    const boutonTxt = document.createElement("p")
-    txtElement.innerText=("Tous");
+    const navBouton = document.querySelector(".boutons");
+    const boutonTous = document.createElement("button");
+    boutonTous.innerText = ("Tous")
+    const boutonObjets = document.createElement("button");
+    boutonObjets.innerText = ("Objets")
+    const boutonAppartements = document.createElement("button");
+    boutonAppartements.innerText = ("Appartements")
+    const boutonHotel = document.createElement("button");
+    boutonHotel.innerText = ("Hôtels & restaurants")
 
-    navBouton.appendChild(button);
+    navBouton.appendChild(boutonTous);
+    navBouton.appendChild(boutonObjets);
+    navBouton.appendChild(boutonAppartements);
+    navBouton.appendChild(boutonHotel);
 
-boutonTrier.addEventListener("click", function () {
-    const piecesOrdonnees = Array.from(pieces);
-    piecesOrdonnees.sort(function (a, b) {
+boutonObjet.addEventListener("click", async function () {
+    const figure = works[i];
+    objetsElement.sort(function (a, b) {
         return a.prix - b.prix;
      });
      document.querySelector(".fiches").innerHTML = "";

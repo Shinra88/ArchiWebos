@@ -199,4 +199,48 @@ footer{
 	padding-right: 107px;
 }
 
+.filtres{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.boutons{
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	padding-top: 21px;
+	padding-bottom: 51px;
+	
+}
+	
+	button{
+		display: flex;
+		width: 100px;
+		height: 37px;
+		background: #FFFEF8;
+		border: 1px solid #1D6154;
+		border-radius: 60px;
+	}
+		button:hover{
+			display: flex;
+			width: 100px;
+			height: 37px;
+			color: #1D6154;
+			background: #1D6154;
+			border: 1px solid #1D6154;
+			border-radius: 60px;
+		}
+
+		button:active{
+			display: flex;
+			width: 100px;
+			height: 37px;
+			color: #1D6154;
+			background: #1D6154;
+			border: 1px solid #1D6154;
+			border-radius: 60px;
+		}
+
 
