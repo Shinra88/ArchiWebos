@@ -25,8 +25,7 @@ async function asyncReturn() {
         worksElement.appendChild(nomElement);
 
         }
-    }   
-    asyncReturn();   
+      
 
     const navBouton = document.querySelector(".boutons");
     const boutonTous = document.createElement("button");
@@ -46,8 +45,11 @@ async function asyncReturn() {
     const boutonObjet = document.querySelector("button");
     boutonObjet.addEventListener("click", function () {
         const worksFiltrees = works.filter(function (works){
-            return works[id] ="1"
-        
+            return works.id = "1"
         });
+        document.querySelector(".gallery").innerHTML = "";
+        asyncReturn(worksFiltrees);
     });
+}   
+asyncReturn(); 
 
