@@ -43,15 +43,11 @@ async function asyncReturn() {
     navBouton.appendChild(boutonAppartements);
     navBouton.appendChild(boutonHotel);
 
-boutonObjet.addEventListener("click", async function () {
-    const figure = works[i];
-    objetsElement.sort(function (a, b) {
-        return a.prix - b.prix;
-     });
-     document.querySelector(".fiches").innerHTML = "";
-    genererPieces(piecesOrdonnees);
-});
-    
-    
-    
-    
+    const boutonObjet = document.querySelector("button");
+    boutonObjet.addEventListener("click", function () {
+        const worksFiltrees = works.filter(function (works){
+            return works[id] ="1"
+        
+        });
+    });
+
