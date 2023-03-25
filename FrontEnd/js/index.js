@@ -29,7 +29,23 @@ async function asyncReturn() {
 
         }
     }   
-    asyncReturn();    
+    asyncReturn();   
+
+    const boutonFiltre = document.createElement("button")
+    const navBouton = document.querySelector(".filtre");
+    const boutonTxt = document.createElement("p")
+    txtElement.innerText=("Tous");
+
+    navBouton.appendChild(button);
+
+boutonTrier.addEventListener("click", function () {
+    const piecesOrdonnees = Array.from(pieces);
+    piecesOrdonnees.sort(function (a, b) {
+        return a.prix - b.prix;
+     });
+     document.querySelector(".fiches").innerHTML = "";
+    genererPieces(piecesOrdonnees);
+});
     
     
     
