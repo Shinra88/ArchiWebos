@@ -1,22 +1,36 @@
+
 async function asyncReturn() { 
+
+    const reponse = await fetch("http://localhost:5678/api/works/"); 
+    const works = await reponse.json(console.table);
+
+
+
+
     
-    const reponse = await fetch('http://localhost:5678/api/works');
-    const works = await reponse.json;
+        for (let i = 0; i < works.length; i++) {
 
+        const figure = works[i];
+        // Récupération de l'élément du DOM qui accueillera les fiches
+        const divGallery = document.querySelector(".gallery");
+        // Création d’une balise dédiée à une pièce automobile
+        const worksElement = document.createElement("figure");
+        // Création des balises 
+        const imageElement = document.createElement("img");
+        imageElement.src = figure.imageUrl;
 
+        const nomElement = document.createElement("p");
+        nomElement.innerText=figure.title;
         
-    const figure = works[0];
-    // Récupération de l'élément du DOM qui accueillera les fiches
-    const divGallery = document.querySelector(".figure");
-    // Création d’une balise dédiée à une pièce automobile
-    // Création des balises 
-    const imageElement = document.createElement("img");
-    imageElement.src = figure.imageUrl;
+        // On rattache la balise article a la section Fiches
+        divGallery.appendChild(worksElement);
+        worksElement.appendChild(imageElement);
+        worksElement.appendChild(nomElement);
 
-    const nomElement = document.createElement("h2");
-    nomElement.innerText=figure.title;
+        }
+    }   
+    asyncReturn();    
     
-    // On rattache la balise article a la section Fiches
-    divGallery.appendChild(imageElement);
-    divGallery.appendChild(nomElement);
-}
+    
+    
+    
