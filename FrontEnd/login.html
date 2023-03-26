@@ -32,14 +32,17 @@
 <main>
     <section id="login">
 		<h2>Log In</h2>
-		<form action="#" method="post">
-			<label for="email">E-mail</label>
-			<input type="email" name="email" id="email">
-            <label for="passworld">Mot de passe</label>
-			<input type="password" name="password" id="pass" minlength="8" required>
-			<input type="submit" value="Se connecter">
-		</form>
-        <a class="pass" href="#">
+		<p id = "erreur"></p>
+		<div id ="connexion">
+				<form>
+				<label for="email">E-mail</label>
+				<input id ="email" type="email" name="email" required>
+				<label for="password">Mot de passe</label>
+				<input id ="password" type="password" name="password" required>
+				<button id ="submit" type="submit">Se connecter</button>
+			</form>
+		</div>
+        <a class="forget_password" href="#">
             <p>Mot de passe oublié</p>
         </a>
 	</section>
@@ -52,3 +55,4 @@
 		</ul>
 	</nav>
 </footer>
+<script src="js/login.js"></script>
