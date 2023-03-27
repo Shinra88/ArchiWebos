@@ -13,8 +13,27 @@ buttonSubmit.addEventListener("click", function() {
     let objets = { "email": email, "password": password }
     let user = [];
 
-    const retour = fetch("http://localhost:5678/api/users/login", post);
-    user = retour.json();
+    const options = {
+        method: 'POST',
+      
+        headers: {
+          // Nous n'accepterons que le JSON en résultat.
+          'Accept': 'application/json',
+          // Dans le cas d'une requête contenant un body,
+          // par exemple une POST ou PUT, on définit le format du body.
+          'Content-Type': 'application/json',
+        },
+      
+        body: JSON.stringify({
+          title: 'Un post',
+          content: 'Contenu de mon post'
+        })
+      }
+      
+      fetch('http://localhost:5678/api/users/login/posts', options)
+        .then((response) => response.json())
+        .then((createdPost) => { /* ... */ })
+      
 
         for (const d of user) {
             if(objets.email === d.email && user.password === d.password ){
