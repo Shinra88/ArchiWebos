@@ -33,17 +33,16 @@ console.table(OPTIONS)
       
 buttonSubmit.addEventListener("click", (e) => {
 e.preventDefault();
+conexionUser();
 
 
 });
 
 function conexionUser(){ 
     fetch('http://localhost:5678/api/users/login', OPTIONS)
-    .then((reponse) => reponse.json())
-    .then((data)=>{
- console.log(data)
-    })
-
+    .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(error => console.error(error));
 };
 
       
