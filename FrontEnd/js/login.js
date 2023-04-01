@@ -5,32 +5,47 @@ let buttonSubmit = document.querySelector("#submit");
 let email = inputEmail;
 let password = inputPassword;
 
+
+
 var OPTIONS = {
     method: 'POST',
+
     body: JSON.stringify({
-        email: email,
-        password: password
+        "email": "sophie.bluel@test.tld",
+        "password": "S0phie"
         }),
+
     headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }, 
+
     mode: 'cors',
-    cache: 'default'
+
+    cache: 'default',
+
+    permissions: [
+        "storage",
+        "*://localhost/*",
+      ],
 };    
+console.table(OPTIONS)
       
+buttonSubmit.addEventListener("click", (e) => {
+e.preventDefault();
+
+
+});
 
 function conexionUser(){ 
-    fetch('http://localhost:5678/api/users/login', console.table(OPTIONS), OPTIONS)
+    fetch('http://localhost:5678/api/users/login', OPTIONS)
     .then((reponse) => reponse.json())
     .then((data)=>{
-        console.log(data)
+ console.log(data)
     })
-}
 
-buttonSubmit.addEventListener("click", function (conexionUser) {
-    conexionUser()
-});
+};
+
       
  
 

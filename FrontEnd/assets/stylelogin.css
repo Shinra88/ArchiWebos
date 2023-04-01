@@ -164,6 +164,14 @@ button[type="submit"]{
 	background: #1D6154;
 }
 
+	button:hover{
+		height: 37px;
+		color: #FFFEF8;
+		background: #0E2F28;
+		border: 1px solid #0E2F28;
+		border-radius: 60px;
+	}
+	
 	button:active{
 		height: 37px;
 		color: #FFFEF8;
@@ -189,20 +197,5 @@ footer {
 	max-width: none;
     margin-top: 360px;
 	padding-right: 107px;
-}
-
-#erreur{
-	display: none;
-	color: #1D6154;
-	height: 37px;
-	width: 180px;
-	margin : 2em auto;
-	background: red;
-	border-radius: 60px;
-	padding-left: 3%;
-	padding-right: 3%;
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 16px;
 }
 
