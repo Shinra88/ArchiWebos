@@ -1,10 +1,10 @@
-let email = document.getElementById("email").value;
+const email = document.getElementById("email").value;
 console.log(email)
 
-let password = document.getElementById("password").value;
+const password = document.getElementById("password").value;
 console.log(password)
 
-let buttonSubmit = document.querySelector("#submit");
+const buttonSubmit = document.querySelector("#submit");
 
 
 const user = {
@@ -18,21 +18,13 @@ console.table(user)
 var OPTIONS = {
     method: 'POST',
 
-    body: JSON.stringify(email, password),
+    body: JSON.stringify(user),
 
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
     }, 
-
-    mode: 'cors',
-
-    cache: 'default',
-
-    permissions: [
-        "storage",
-        "*://localhost/*",
-      ],    
+ 
 };  
 
 console.table(OPTIONS)
