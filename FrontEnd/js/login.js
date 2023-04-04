@@ -22,8 +22,6 @@ function conexionUser() {
         "password": password,
     };
 
-    console.table(user)
-
     var OPTIONS = {
         method: 'POST',
 
@@ -36,15 +34,15 @@ function conexionUser() {
 
     };
 
-    console.table(OPTIONS);
-
     fetch('http://localhost:5678/api/users/login', OPTIONS)
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(error => console.error(error));
-    console.table(OPTIONS);
-};
-
-
-
+        .then(response => {
+            if (response.ok) {
+              // Faire un message authentification réussi / return response.json(), * ;//
+            } else {
+              // Faire un message erreur authentification / return Promise.reject(response.status);//
+            }
+        })
+        // Faire une redirection / .then(token => sessionStorage.setItem("token", token.token))
+        .catch(err => console.log(`Erreur avec le message : ${err}`));
+    }
 
