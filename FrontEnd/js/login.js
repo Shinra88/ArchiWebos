@@ -1,8 +1,20 @@
 
 
 const buttonSubmit = document.querySelector("#submit");
+const error = document.querySelector(".error");
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
-buttonSubmit.addEventListener("click", (e) => {
+span.onclick = function() {
+    modal.style.display = "none";
+}   
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+}
+    buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     conexionUser();
 
@@ -37,12 +49,21 @@ function conexionUser() {
     fetch('http://localhost:5678/api/users/login', OPTIONS)
         .then(response => {
             if (response.ok) {
-              // Faire un message authentification réussi / return response.json(), * ;//
+                return response.json()
             } else {
-              // Faire un message erreur authentification / return Promise.reject(response.status);//
+                modal.style.display = "block"
+                error.innerText = ("Identifiant ou mot de passe incorrect");
             }
         })
-        // Faire une redirection / .then(token => sessionStorage.setItem("token", token.token))
-        .catch(err => console.log(`Erreur avec le message : ${err}`));
+        .then((token) => {        
+            sessionStorage.setItem("token", token.token)
+            window.location.assign("http://127.0.0.1:5500/FrontEnd/index.html");
+          
+        })
+        .catch((error) => {
+            modal.style.display = "block"
+            error.innerText = ("Erreur réseau");
+        });
+        
     }
 
