@@ -55,8 +55,9 @@ function conexionUser() {
                 error.innerText = ("Identifiant ou mot de passe incorrect");
             }
         })
-        .then((token) => {        
-            sessionStorage.setItem("token", token.token)
+        .then((data) => {        
+            sessionStorage.setItem("token", data.token)
+            sessionStorage.setItem("id", data.id)
             window.location.assign("http://127.0.0.1:5500/FrontEnd/index.html");
           
         })
