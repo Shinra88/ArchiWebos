@@ -89,7 +89,7 @@ function returnModalDelete() {
 closeTriggers2.addEventListener("click", CloseModalOverlay);
 
 function createModalCard() {
-  fetch(works + "works")
+  fetch("http://localhost:5678/api/works/")
     .then((reponse) => {
       if (reponse.ok) {
         return reponse.json();
@@ -114,7 +114,7 @@ function createModalCard() {
           fetch(`http://localhost:5678/api/works/${element.id}`, {
             method: 'DELETE',
             headers: {
-              Authorization: `Bearer ${localStorage.token}`,
+              Authorization: `Bearer ${sessionStorage.token}`,
             },
           })
             .then(response => {
@@ -185,7 +185,7 @@ formModale.addEventListener("submit", (event) => {
     method: "POST",
     body: formData,
     headers: {
-      Authorization: `Bearer ${localStorage.token}`,
+      Authorization: `Bearer ${sessionStorage.token}`,
     },
   }).then((reponse) => {
     if (reponse.ok) {

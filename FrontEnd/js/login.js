@@ -57,7 +57,7 @@ function conexionUser() {
         })
         .then((data) => {        
             sessionStorage.setItem("token", data.token)
-            sessionStorage.setItem("id", data.id)
+            sessionStorage.setItem("id", data.userId)
             window.location.assign("http://127.0.0.1:5500/FrontEnd/index.html");
           
         })
