@@ -291,6 +291,8 @@ footer{
 .modalcontainer{
 	display: none;
 	position:fixed ;
+	width: 100vw;
+	height: 100vh;
 	top: 0;
 }
 .modalcontainer.active{ 
@@ -298,10 +300,9 @@ footer{
 }
 	
 .overlaymodal{
-	position: fixed;
-	max-width: 1140px;
-	width: 130vh;
-	height: 100vh;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	background: rgba(0, 0, 0, 0.3);
 }
 .submit_overline{
@@ -309,27 +310,33 @@ footer{
 	margin-top: 7%;
 	border-top: 1px solid #B3B3B3;
 }
+
 .modal.active{
+	width: 95%;
+	max-width: 630px;
+	max-height: 730px;
 	padding: 30px;
 	background: #FFFFFF;
-	border-radius: 5px;
-	position: fixed;
-	margin-top: 9%;
-	margin-left: 14.5%;
-	padding-bottom: 4.6%;
-	padding-left: 0%;
-	padding-top: 3%;
+	border-radius: 10px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 75px;
 }
+
 .modaldelete.active{
+	width: 95%;
+	max-width: 630px;
+	max-height: 730px;
 	padding: 30px;
 	background: #FFFFFF;
-	border-radius: 5px;
-	position: fixed;
-	padding-top: 2%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin-top: 9%;
-	margin-left: 14.6%;
+	border-radius: 10px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 75px;
 }
 
 #modaldelete{
@@ -373,20 +380,20 @@ footer{
 	gap: 20px;
 }
 .edit_Card  { 
-width: 70px;
+	width: 70px;
 }
 .edit_Card>img { 
 	height: 110px;
 }
 .fa-solid.fa-trash-can{
-position: absolute;
-margin-top: -19.5%;
-margin-left: 9%;
-color: #FFFFFF;
-border: 0.5px solid black;
-border-radius: 20%;
-background-color: black;
-padding: 0.5%;
+	position: absolute;
+	margin-top: -19.5%;
+	margin-left: 9%;
+	color: #FFFFFF;
+	border: 0.5px solid black;
+	border-radius: 20%;
+	background-color: black;
+	padding: 0.5%;
 }
 #modaladding{
 	display: none;

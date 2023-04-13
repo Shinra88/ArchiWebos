@@ -35,6 +35,7 @@ if (sessionStorage.token) {
   createEditingButton("change_button_project");
   const filters = document.querySelector("#portfolio>h2");
   filters.append(editingButton);
+  navBouton.style.display = "none";
 }
 
 // MODALES //
