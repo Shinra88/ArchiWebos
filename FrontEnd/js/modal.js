@@ -104,12 +104,27 @@ function createModalCard() {
         editCard.className = "edit_Card";
         const image = document.createElement("img");
         image.src = element.imageUrl;
-        const description = document.createElement("figcaption");
-        description.innerHTML = `<p class="editing_trigger">éditer</p>
-      <button
-       <i class="fa-solid fa-trash-can"></i>
-     </button`;
+        
+        const description = document.createElement("buttonSup");
+        description.innerHTML = `<button
+        <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
+        </button`;
         description.setAttribute("id", "deleteBtn");
+
+        const descriptio = document.createElement("buttonMov");
+        description.innerHTML = `
+        <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
+`;
+        description.setAttribute("id", "movBtn");
+
+         const description4 = document.createElement("p");
+         description4.innerHTML = `<p class="editing_trigger">éditer</p>`;
+         description4.setAttribute("id", "editingBtn");
+     
+        
+        
+        
+        
         // Supprimer un projet ciblé //
         description.addEventListener('click', (e) => {
           fetch(`http://localhost:5678/api/works/${element.id}`, {
