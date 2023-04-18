@@ -100,33 +100,30 @@ function createModalCard() {
     })
     .then((data) => {
       data.forEach((element) => {
-        const editCard = document.createElement("figure");
+        const editCard = document.createElement("div");
         editCard.className = "edit_Card";
         const image = document.createElement("img");
         image.src = element.imageUrl;
         
-        const description = document.createElement("buttonSup");
-        description.innerHTML = `<button
-        <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
-        </button`;
-        description.setAttribute("id", "deleteBtn");
+        const moovButton = document.createElement("button");
+        moovButton.setAttribute("id", "moovBtn");
+        moovButton.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right;"></i>`;
 
-        const descriptio = document.createElement("buttonMov");
-        description.innerHTML = `
-        <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
-`;
-        description.setAttribute("id", "movBtn");
+        const deleteButton = document.createElement("button");
+        deleteButton.setAttribute("id", "deleteBtn");
+        deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;        
 
-         const description4 = document.createElement("p");
-         description4.innerHTML = `<p class="editing_trigger">éditer</p>`;
-         description4.setAttribute("id", "editingBtn");
+        const description4 = document.createElement("p");
+        description4.innerHTML = `<p class="editing_trigger">éditer</p>`;
+        description4.setAttribute("id", "editingBtn");
+       
      
         
         
         
         
         // Supprimer un projet ciblé //
-        description.addEventListener('click', (e) => {
+        deleteButton.addEventListener('click', (e) => {
           fetch(`http://localhost:5678/api/works/${element.id}`, {
             method: 'DELETE',
             headers: {
@@ -144,7 +141,7 @@ function createModalCard() {
         });
         modalDeleteContent.append(editCard);
         editCard.append(image);
-        editCard.append(description);
+        editCard.append(deleteButton);
       });
     });
 }
