@@ -102,26 +102,32 @@ function createModalCard() {
       data.forEach((element) => {
         const editCard = document.createElement("div");
         editCard.className = "edit_Card";
+
         const image = document.createElement("img");
         image.src = element.imageUrl;
+        editCard.appendChild(image); 
         
         const moovButton = document.createElement("button");
         moovButton.setAttribute("id", "moovBtn");
-        moovButton.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right;"></i>`;
+        moovButton.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right" style="color: #ffffff;"></i>`;
+        editCard.appendChild(moovButton); 
 
         const deleteButton = document.createElement("button");
         deleteButton.setAttribute("id", "deleteBtn");
-        deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;        
+        deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;
+        editCard.appendChild(deleteButton); 
 
-        const description4 = document.createElement("p");
-        description4.innerHTML = `<p class="editing_trigger">éditer</p>`;
-        description4.setAttribute("id", "editingBtn");
-       
-     
+        //const editingButton = document.querySelector(".edit_Card").insertAdjacentHTML("beforeEnd","<p>éditer</p>");//
+       // editCard.appendChild(editingButton); //
+
         
-        
-        
-        
+        // affiché moov au survol //
+image.addEventListener('mouseover', () => {
+    moovButton.style.display = "inline-block";
+})
+image.addEventListener('mouseout', () => {
+    moovButton.style.display = "none";
+})
         // Supprimer un projet ciblé //
         deleteButton.addEventListener('click', (e) => {
           fetch(`http://localhost:5678/api/works/${element.id}`, {

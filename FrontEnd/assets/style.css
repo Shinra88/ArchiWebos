@@ -392,13 +392,18 @@ footer{
 	width: 100%;
 	margin-bottom: 5px;
 }
+.edit_Card p{
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
+}
 #deleteBtn{
 	display: inline-block;
 	position: absolute;
 	width: 17px;
 	height: 17px;
 	font-size: 10px;
-	margin-top: 5px;
+	margin-top: 20px;
 	margin-left: 50px;
 	border:solid black;
 	border-radius: 2px;
@@ -409,15 +414,16 @@ footer{
 	cursor: pointer;
 }
 #moovBtn{
-	display: inline-block;
+	display: none;
 	position: absolute;
 	width: 17px;
 	height: 17px;
 	font-size: 10px;
-	margin-top: 5px;
-	margin-left: 40px;
+	margin-top: 20px;
+	margin-left: 30px;
 	border:solid black;
 	border-radius: 2px;
+	color: white;
 	background-color: black;
 	padding: 1px
 }
