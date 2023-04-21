@@ -117,14 +117,7 @@ function createModalCard() {
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;
         editCard.appendChild(deleteButton); 
 
-const editingButton = document.createElement("button");
-deleteButton.setAttribute("id", "editBtn");
-const text = document.createTextNode("éditer");
-editingButton.appendChild(text);
-editCard.insertAdjacentHTML('afterend', editingBeditutton.outerHTML); 
-
-        //const editingButton = document.querySelector(".editBtn")//
-       // .insertAdjacentHTML("beforeEnd","<p>éditer</p>");//
+        //const editingButton = document.querySelector(".edit_Card").insertAdjacentHTML("beforeEnd","<p>éditer</p>");//
        // editCard.appendChild(editingButton); //
 
         
