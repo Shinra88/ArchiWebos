@@ -117,8 +117,12 @@ function createModalCard() {
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;
         editCard.appendChild(deleteButton); 
 
-        //const editingButton = document.querySelector(".edit_Card").insertAdjacentHTML("beforeEnd","<p>éditer</p>");//
-       // editCard.appendChild(editingButton); //
+        const editingButton = document.createElement("p");
+        editingButton.setAttribute("id", "editBtn");
+        //editingButton.innerText = ("éditer");//
+        const editButton = editingButton;
+        editButton.insertAdjacentHTML('beforeend','<p id="edit_Card">éditer</p>');
+        editCard.appendChild(editingButton);
 
         
         // affiché moov au survol //
