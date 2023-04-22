@@ -105,36 +105,30 @@ function createModalCard() {
 
         const image = document.createElement("img");
         image.src = element.imageUrl;
-        editCard.appendChild(image); 
-        
+        editCard.appendChild(image);
+
         const moovButton = document.createElement("button");
         moovButton.setAttribute("id", "moovBtn");
         moovButton.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right" style="color: #ffffff;"></i>`;
-        editCard.appendChild(moovButton); 
+        editCard.appendChild(moovButton);
 
         const deleteButton = document.createElement("button");
         deleteButton.setAttribute("id", "deleteBtn");
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;
-        editCard.appendChild(deleteButton); 
+        editCard.appendChild(deleteButton);
 
-        const editingButton = document.createElement("button");
-        editingButton.setAttribute("id", "editBtn")
-        const text = document.createTextNode("éditer");
-        editingButton.appendChild(text);
-        editCard = document.querySelector(".edit_Card");
-        editCard.insertAdjacentHTML('afterend', editingButton.outerHTML); 
-        
-        //const editingButton = document.querySelector(".edit_Card").insertAdjacentHTML("beforeEnd","<p>éditer</p>");//
-        // editCard.appendChild(editingButton); //
+        const editingButton = document.createElement("p", "afterend");
+        editingButton.setAttribute("id", "editBtn");
+        editingButton.innerText = `éditer`;
+        editCard.appendChild(editingButton);
 
-        
         // affiché moov au survol //
-image.addEventListener('mouseover', () => {
-    moovButton.style.display = "inline-block";
-})
-image.addEventListener('mouseout', () => {
-    moovButton.style.display = "none";
-})
+        image.addEventListener('mouseover', () => {
+          moovButton.style.display = "inline-block";
+        })
+        image.addEventListener('mouseout', () => {
+          moovButton.style.display = "none";
+        })
         // Supprimer un projet ciblé //
         deleteButton.addEventListener('click', (e) => {
           fetch(`http://localhost:5678/api/works/${element.id}`, {
@@ -153,8 +147,6 @@ image.addEventListener('mouseout', () => {
             });
         });
         modalDeleteContent.append(editCard);
-        editCard.append(image);
-        editCard.append(deleteButton);
       });
     });
 }

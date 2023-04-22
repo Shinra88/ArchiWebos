@@ -306,6 +306,7 @@ footer{
 	background: rgba(0, 0, 0, 0.3);
 }
 .submit_overline{
+	padding-left: 15%;
 	margin: 8%;
 	width: 420px;
 	border-top: 1px solid #B3B3B3;
@@ -401,8 +402,8 @@ footer{
 	width: 17px;
 	height: 17px;
 	font-size: 10px;
-	margin-top: 20px;
-	margin-left: 50px;
+	margin-top: 4px;
+	margin-left: 51px;
 	border:solid black;
 	border-radius: 2px;
 	background-color: black;
@@ -417,7 +418,7 @@ footer{
 	width: 17px;
 	height: 17px;
 	font-size: 10px;
-	margin-top: 20px;
+	margin-top: 4px;
 	margin-left: 30px;
 	border:solid black;
 	border-radius: 2px;
