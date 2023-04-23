@@ -102,6 +102,7 @@ function createModalCard() {
       data.forEach((element) => {
         const editCard = document.createElement("div");
         editCard.className = "edit_Card";
+        modalDeleteContent.append(editCard);
 
         const image = document.createElement("img");
         image.src = element.imageUrl;
@@ -117,10 +118,10 @@ function createModalCard() {
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>`;
         editCard.appendChild(deleteButton);
 
-        const editingButton = document.createElement("p", "afterend");
-        editingButton.setAttribute("id", "editBtn");
-        editingButton.innerText = `éditer`;
-        editCard.appendChild(editingButton);
+        const editButton = document.createElement("p", "afterend");
+        editButton.setAttribute("id", "editBtn");
+        editButton.innerText = `éditer`;
+        editCard.appendChild(editButton);
 
         // affiché moov au survol //
         image.addEventListener('mouseover', () => {
@@ -139,16 +140,17 @@ function createModalCard() {
           })
             .then(response => {
               if (response.ok) {
-                editCard.remove();
-                removeGalleryScript();
-                createScriptCard();
-                alert("Projet supprimé avec succès !");
+                projetDelete();
               }
             });
         });
-        modalDeleteContent.append(editCard);
       });
     });
+}
+// confirmation suppression projet
+function projetDelete() {
+  window.alert("Projet supprimé avec succès !");
+  editCard.remove();
 }
 // supprimer galleryPreview
 function removeGalleryPreview() {
@@ -208,8 +210,7 @@ formModale.addEventListener("submit", (event) => {
   }).then((reponse) => {
     if (reponse.ok) {
       alert("Projet ajouté avec succès !");
-      removeGalleryScript();
-      createScriptCard();
+      
     } else {
       alert("Le formulaire est incomplet!");
     }
