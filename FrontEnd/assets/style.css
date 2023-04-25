@@ -419,7 +419,7 @@ button:focus {
 }
 
 .submit_overline {
-	margin:auto;
+	margin: auto;
 	margin-top: 8%;
 	width: 420px;
 	border-top: 1px solid #B3B3B3;
@@ -488,7 +488,7 @@ button:focus {
 	margin-top: 8%;
 }
 
-.fa-solid.fa-xmark.modal_closing_icon {
+#modaldelete .fa-solid.fa-xmark.modal_closing_icon {
 	cursor: pointer;
 	margin-left: 95%;
 }
@@ -556,24 +556,40 @@ button:focus {
 
 #modaladding.active {
 	display: flex;
+	flex-direction: column;
 	height: 670px;
-	padding: 70px;
+	width: 95%;
+	max-width: 630px;
+	max-height: 730px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	position: absolute;
+	top: 40%;
+	transform: translate(-50%, -50%);
 }
 
-#modaladding>h3 {
+#fa {
+	display: flex;
+	width: 100%;
+}
+
+#fa h3 {
+	padding-left: 34%;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
 	text-align: center;
-	margin-left: -63%;
+	margin-top: 50px;
 	white-space: nowrap;
 }
 
 #modaladding>form {
-	margin-left: -47%;
+	display: flex;
 	margin-top: 10%;
 	display: flex;
 	flex-direction: column;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 .uploadcontainer {
@@ -660,8 +676,16 @@ button:focus {
 .fa-solid.fa-arrow-left-long.previous_icon {
 	cursor: pointer;
 	height: 10px;
-	margin-left: 3%;
-	margin-top: -3.1%;
+	margin-left: 2%;
+	margin-top: 10px;
+}
+
+#modaladding .fa-solid.fa-xmark.modal_closing_icon {
+	cursor: pointer;
+	height: 10px;
+	width: 30%;
+	margin-top: 10px;
+	margin-left: 35%;
 }
 
 #modal_form_validation {
@@ -674,24 +698,4 @@ button:focus {
 #modal_form_validation.active_button {
 	background: #1D6154;
 	border: #1D6154;
-}
-
-#supprcontainer{
-	display: none;
-
-}
-
-#alert_suppr{
-	display: block;
-	width: 95%;
-	max-width: 630px;
-	max-height: 730px;
-	padding: 30px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	margin-top: 75px;
 }

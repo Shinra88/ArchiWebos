@@ -5,16 +5,16 @@ const error = document.querySelector(".error");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
-}   
+}
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
 }
-    buttonSubmit.addEventListener("click", (e) => {
+buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     conexionUser();
 
@@ -55,16 +55,16 @@ function conexionUser() {
                 error.innerText = ("Identifiant ou mot de passe incorrect");
             }
         })
-        .then((data) => {        
+        .then((data) => {
             sessionStorage.setItem("token", data.token)
             sessionStorage.setItem("id", data.userId)
             window.location.assign("http://127.0.0.1:5500/FrontEnd/index.html");
-          
+
         })
         .catch((error) => {
             modal.style.display = "block"
             error.innerText = ("Erreur réseau");
         });
-        
-    }
+
+}
 

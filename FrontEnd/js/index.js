@@ -43,8 +43,8 @@ async function genererWorks(filtre) {
     }
 
 
-    for (let i = 0; i < worksFiltrees.length; i++) { 
-        const figure = worksFiltrees[i]; 
+    for (let i = 0; i < worksFiltrees.length; i++) {
+        const figure = worksFiltrees[i];
         // Récupération de l'élément du DOM qui accueillera les fiches >>
         const divGallery = document.querySelector(".gallery");
         // Création d’une balise dédiée à aux figures >>
@@ -70,23 +70,23 @@ const boutonObjet = document.querySelector("button");
 
 boutonTous.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
-    filtre = "Tous"; 
-    genererWorks(filtre); 
+    filtre = "Tous";
+    genererWorks(filtre);
 });
 boutonObjets.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
-    filtre = "objets"; 
-    genererWorks(filtre); 
+    filtre = "objets";
+    genererWorks(filtre);
 });
 
 boutonAppartements.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
-    filtre = "Appartements"; 
-    genererWorks(filtre); 
+    filtre = "Appartements";
+    genererWorks(filtre);
 });
 
 boutonHotel.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
-    filtre = "Hôtels & restaurants"; 
-    genererWorks(filtre); 
+    filtre = "Hôtels & restaurants";
+    genererWorks(filtre);
 });

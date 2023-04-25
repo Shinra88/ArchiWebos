@@ -48,7 +48,7 @@ const modalDeleteContent = modalDelete.querySelector(".modal_content");
 const closeTriggers = document.querySelector(".fa-solid.fa-xmark.modal_closing_icon")
 const modalAddingTriggers = document.querySelector("#modaldelete>input")
 const returnTriggers = document.querySelector(".fa-solid.fa-arrow-left-long.previous_icon")
-const closeTriggers2 = document.querySelector("#modaladding>.fa-solid.fa-xmark.modal_closing_icon")
+const closeTriggers2 = document.querySelector("#fa>.fa-solid.fa-xmark.modal_closing_icon")
 
 // OUVERTURE/FERMETURE MODALES //
 modalTriggers.addEventListener("click", OpenModal);
@@ -132,6 +132,7 @@ function createModalCard() {
         })
         // Supprimer un projet ciblé //
         deleteButton.addEventListener('click', (e) => {
+          console.log("salut toto");
           fetch(`http://localhost:5678/api/works/${element.id}`, {
             method: 'DELETE',
             headers: {
@@ -140,24 +141,13 @@ function createModalCard() {
           })
             .then(response => {
               if (response.ok) {
-                projetDelete();
                 editCard.remove();
+                alert('Projet supprimé avec succès !');
               }
             });
         });
       });
     });
-}
-// confirmation suppression projet
-function projetDelete() {
-  window.alert('Projet supprimé avec succès !');
-  // var popupsuppr = document.getElementById("supprcontainer");
-  // if (popupsuppr.style.dispaly === "none"){
-  //   popupsuppr.style.display = "block";
-  // }
-  // else{
-  //   popupsuppr.style.display = "none";
-  // }
 }
 
 // supprimer galleryPreview
@@ -218,7 +208,7 @@ formModale.addEventListener("submit", (event) => {
   }).then((reponse) => {
     if (reponse.ok) {
       alert("Projet ajouté avec succès !");
-      
+
     } else {
       alert("Le formulaire est incomplet!");
     }
