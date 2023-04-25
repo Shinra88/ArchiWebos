@@ -141,6 +141,7 @@ function createModalCard() {
             .then(response => {
               if (response.ok) {
                 projetDelete();
+                editCard.remove();
               }
             });
         });
@@ -149,9 +150,16 @@ function createModalCard() {
 }
 // confirmation suppression projet
 function projetDelete() {
-  window.alert("Projet supprimé avec succès !");
-  editCard.remove();
+  window.alert('Projet supprimé avec succès !');
+  // var popupsuppr = document.getElementById("supprcontainer");
+  // if (popupsuppr.style.dispaly === "none"){
+  //   popupsuppr.style.display = "block";
+  // }
+  // else{
+  //   popupsuppr.style.display = "none";
+  // }
 }
+
 // supprimer galleryPreview
 function removeGalleryPreview() {
   const galleryPreviewList = modalDeleteContent.querySelectorAll(".edit_Card");
