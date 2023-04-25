@@ -38,7 +38,7 @@ if (sessionStorage.token) {
   navBouton.style.display = "none";
 }
 
-// MODALES //
+// Modales //
 const modalAdding = document.querySelector("#modaladding");
 const modalDelete = document.querySelector("#modaldelete");
 const overlay = document.querySelector(".overlaymodal");
@@ -50,7 +50,7 @@ const modalAddingTriggers = document.querySelector("#modaldelete>input")
 const returnTriggers = document.querySelector(".fa-solid.fa-arrow-left-long.previous_icon")
 const closeTriggers2 = document.querySelector("#fa>.fa-solid.fa-xmark.modal_closing_icon")
 
-// OUVERTURE/FERMETURE MODALES //
+// Modales ouverture-fermeture //
 modalTriggers.addEventListener("click", OpenModal);
 
 function OpenModal() {
@@ -123,7 +123,7 @@ function createModalCard() {
         editButton.innerText = `éditer`;
         editCard.appendChild(editButton);
 
-        // affiché moov au survol //
+        // Affiché moov au survol //
         image.addEventListener('mouseover', () => {
           moovButton.style.display = "inline-block";
         })
@@ -150,7 +150,7 @@ function createModalCard() {
     });
 }
 
-// supprimer galleryPreview
+// Supprimer galleryPreview
 function removeGalleryPreview() {
   const galleryPreviewList = modalDeleteContent.querySelectorAll(".edit_Card");
   galleryPreviewList.forEach(function (editCard) {

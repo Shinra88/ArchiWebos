@@ -17,8 +17,6 @@ window.onclick = function (event) {
 buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     conexionUser();
-
-
 });
 
 function conexionUser() {
@@ -43,7 +41,6 @@ function conexionUser() {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-
     };
 
     fetch('http://localhost:5678/api/users/login', OPTIONS)
