@@ -3,7 +3,7 @@ const header = document.querySelector("header");
 const parentHeader = header.parentNode;
 const introduction = document.querySelector("#introduction");
 
-//Creation de la bannière et bouton édition//
+//Creation de la bannière et bouton édition
 let editingBanner;
 let editingButton;
 
@@ -22,6 +22,7 @@ const createEditingButton = (id) => {
   editingButton.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>
   <p>modifier</p>`;
 };
+
 // Session admin //
 if (sessionStorage.token) {
   createBannner();
@@ -130,6 +131,7 @@ function createModalCard() {
         image.addEventListener('mouseout', () => {
           moovButton.style.display = "none";
         })
+
         // Supprimer un projet ciblé //
         deleteButton.addEventListener('click', (e) => {
           console.log("salut toto");
@@ -158,13 +160,14 @@ function removeGalleryPreview() {
   });
 }
 
-// Modification du style du submit quand formulaire remplit //
+// Modification du style du submit quand formulaire remplit 
 const submitBtn = document.getElementById("modal_form_validation");
 const FormModalAdding = modalAdding.querySelector("form");
 FormModalAdding.addEventListener("input", function () {
   submitBtn.setAttribute("class", "active_button");
 });
-// Ajout de l'image chargée dans l'AddingModal //
+
+// Ajout de l'image chargée dans l'AddingModal 
 const imageUpload = document.getElementById("image_upload");
 const uploadContainer = document.querySelector(".uploadcontainer");
 const previewImage = document.querySelector(".image_preview");
@@ -184,7 +187,7 @@ imageUpload.addEventListener("change", function () {
   }
 });
 
-// Ajout works dans l'api//
+// Ajout works dans l'api
 const inputFile = document.getElementById("image_upload");
 const titre = document.getElementById("Titleinput");
 const select = document.getElementById("category_input");
